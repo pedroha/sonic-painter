@@ -6,7 +6,7 @@ Custom expansions based on the Sonic Painter by the Coursera class by:
   Creative Programming for Digital Media & Mobile Apps 
   by Marco Gillies, Matthew Yee-King, Mick Grierson
 
-Move the mouse to see and hear the piece.
+Drag the mouse to see and hear.
 http://pedroha.github.io/sonic_painter/
 
 Sounds from freesound.org
