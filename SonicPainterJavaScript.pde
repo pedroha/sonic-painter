@@ -11,9 +11,9 @@ void setup()
   size(640, 960);
 
   maxim = new Maxim(this);
-  player2 = maxim.loadFile("abelmadrona__water-tunnel.wav");
+  player2 = maxim.loadFile("abelmadrona__water-tunnel.mp3");
   player2.setLooping(true);
-  player = maxim.loadFile("erokia__elementary-synth-16-2.wav"); //"bells.wav");
+  player = maxim.loadFile("erokia__elementary-synth-16-2.mp3");
   player.setLooping(true);
   player.volume(0.25);
   background(0);
