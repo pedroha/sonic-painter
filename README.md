@@ -7,7 +7,7 @@ Custom expansions based on the Sonic Painter by the Coursera class by:
   by Marco Gillies, Matthew Yee-King, Mick Grierson
 
 Drag the mouse to see and hear.
-http://pedroha.github.io/sonic_painter/
+http://pedroha.github.io/sonic-painter/
 
 Sounds from freesound.org
 
