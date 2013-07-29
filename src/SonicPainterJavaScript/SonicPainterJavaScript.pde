@@ -9,11 +9,19 @@ int counter = 0;
 void setup()
 {
   size(640, 960);
+  
+  var suffix = "mp3";
+  var ua = navigator.userAgent.toLowerCase();
+  var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+  if(isAndroid) {
+    suffix = "ogg";
+  }
+  // alert("Android? " + suffix);
 
   maxim = new Maxim(this);
-  player2 = maxim.loadFile("abelmadrona__water-tunnel.mp3");
+  player2 = maxim.loadFile("abelmadrona__water-tunnel." + suffix);
   player2.setLooping(true);
-  player = maxim.loadFile("erokia__elementary-synth-16-2.mp3");
+  player = maxim.loadFile("erokia__elementary-synth-16-2." + suffix);
   player.setLooping(true);
   player.volume(0.25);
   background(0);
@@ -58,28 +66,25 @@ void mouseDragged()
   
   stroke(red, green, blue, 255);
   
-  boolean pedro = true;
-  if (pedro) {
-    //brush1(pmouseX, pmouseY,mouseX, mouseY,lineWidth);
-    quadbrush(pmouseX, pmouseY,mouseX, mouseY, lineWidth);
-    //brokenLineBrush(pmouseX, pmouseY,mouseX, mouseY, lineWidth);
-    
-    reflectBrokenBrush(pmouseX, pmouseY,mouseX, mouseY, lineWidth);
-    
-      bezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[5], anchorPoints[5]);
-      bezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[3], anchorPoints[4]);
-      bezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[4], anchorPoints[3]);
-      bezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[2], anchorPoints[4]);
-      bezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[1], anchorPoints[5]);
-
-      reflectBezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[0], anchorPoints[1]);
-      reflectBezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[1], anchorPoints[2]);
-      reflectBezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[2], anchorPoints[3]);
-      reflectBezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[4], anchorPoints[5]);
-      reflectBezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[3], anchorPoints[5]);
+  quadbrush(pmouseX, pmouseY,mouseX, mouseY, lineWidth);
+  //brokenLineBrush(pmouseX, pmouseY,mouseX, mouseY, lineWidth);
+  
+  reflectBrokenBrush(pmouseX, pmouseY,mouseX, mouseY, lineWidth);
+  
+  boolean curve = true;
+  if (curve) {
+    bezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[5], anchorPoints[5]);
+    bezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[3], anchorPoints[4]);
+    bezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[4], anchorPoints[3]);
+    bezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[2], anchorPoints[4]);
+    bezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[1], anchorPoints[5]);
+  
+    reflectBezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[0], anchorPoints[1]);
+    reflectBezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[1], anchorPoints[2]);
+    reflectBezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[2], anchorPoints[3]);
+    reflectBezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[4], anchorPoints[5]);
+    reflectBezier1(pmouseX, pmouseY,mouseX, mouseY, lineWidth, anchorPoints[3], anchorPoints[5]);
   }
-
-  //brush7(pmouseX, pmouseY,mouseX, mouseY,lineWidth);
 
   player.setFilter((float) mouseY/height*5000, mouseX / width);
   player2.setFilter((float) mouseY/height*5000,mouseX / width);
@@ -130,11 +135,10 @@ void bezier1(float x,float y, float px, float py, float lineWidth, float bx, flo
       beginShape();
       vertex(x, y);
       strokeWeight(1);
-      bezierVertex(bx, 0, bx, by, 30, by);
+      bezierVertex(bx, 30, bx, by, 30, by);
       bezierVertex(50, bx, 145, 25, x, y);
       endShape();
     }
-
   }
   return;
 }
@@ -193,14 +197,6 @@ void quadbrush(float x,float y, float px, float py, float lineWidth) {
       quad(x, y, midx+barLength, midy, px, py, midx-barLength, midy);
     }
   }
-  return;
-}
-
-
-void brush7(float x,float y, float px, float py, float lineWidth) {
-  strokeWeight(lineWidth);
-  line(px,py,x,y);
-  line(width/2+((width/2)-px),py,width/2+((width/2)-x),y);
   return;
 }
 
