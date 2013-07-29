@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title>SonicPainterJavaScript : Built with Processing and Processing.js</title>
 		<link rel="icon"  type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAQAAVzABAEAjBQAaDwYAWjUGAGE6CQBrQQ0ATS8PAFhAJwBUQC8AbFI6AHVXPACBZk4A4NrWAPb19QAAAAAAAMmZmZmZmgAJIwAAAAAAcMIjPjA+PjAKpxIuMDMzMAm0Ii4zMzMACaIiLt3dMAAJtyIuIzPQAAm0Un5yM+IzKLRkfncy4iIotRF+dyLkIiq0QX53F+EiGrQUTkd34iIatEVu7u5iIVrBVVRBRFRVbAtGZGZla2uwAMu7u7u8vADAAwAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAADAAwAA" />
 		<meta name="Generator" content="Processing" />
-		<meta name="viewport" content="width=device-width,user-scalable=no">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<!-- - - - - - - - - - - - - - - - - - - - - 
 		+
 		+    Wondering how this works? 
@@ -17,7 +14,7 @@
 		+ - - - - - - - - - - - - - - - - - - - - -->
 		<style type="text/css">
 	body {
-	  background-color: #000; color: #bbb; line-height: normal;
+	  background-color: #333; color: #bbb; line-height: normal;
 	  font-family: Lucida Grande, Lucida Sans, Arial, Helvetica Neue, Verdana, Geneva, sans-serif;
 	  font-size: 11px; font-weight: normal; text-decoration: none;
 		  line-height: 1.5em;
@@ -38,7 +35,6 @@
 		outline: 0px; 
 		margin-bottom: 1.5em; 
 	}
-/* 
 	#content { 
 		margin: 50px auto 0px auto; padding: 25px 25px 15px 25px;
 		width: 640px; min-width: 300px; overflow: auto;
@@ -46,27 +42,6 @@
 		border-right: 1px solid #333; border-bottom: 1px solid #333;
 		background-color: #3d3d3d;
 	}
- */
- 
- <script type="text/javascript">
- 
- function hideAddressBar()
-{
-  if(!window.location.hash)
-  {
-      if(document.height < window.outerHeight)
-      {
-          document.body.style.height = (window.outerHeight + 50) + 'px';
-      }
- 
-      setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
-  }
-}
- 
-window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
-window.addEventListener("orientationchange", hideAddressBar );
- 
-</script>
 		</style>
 		<!--[if lt IE 9]>
 			<script type="text/javascript">alert("Your browser does not support the canvas tag.");</script>
@@ -90,6 +65,14 @@ function getProcessingSketchId () { return 'SonicPainterJavaScript'; }
 				<noscript>
 					<p>JavaScript is required to view the contents of this page.</p>
 				</noscript>
+	    	</div>
+			<h1>SonicPainterJavaScript</h1>
+    		<p id="description"></p>
+			<p id="sources">Source code: <a href="SonicPainterJavaScript.pde">SonicPainterJavaScript</a> <a href="maxim.js">maxim.js</a> </p>
+			<p>
+			Built with <a href="http://processing.org" title="Processing">Processing</a>
+			and <a href="http://processingjs.org" title="Processing.js">Processing.js</a>
+			</p>
 		</div>
 	</body>
 </html>
